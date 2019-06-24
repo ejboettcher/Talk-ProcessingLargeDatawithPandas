@@ -74,4 +74,4 @@ def df_mem_usage(pandas_obj):
     else: # Assumes it is a Series
         usage_b = pandas_obj.memory_usage(deep=True)
     usage_mb = usage_b/1024**2
-    return "{:03.2f}MB".format(usage_mb)
+    return "{:03.4f}MB".format(usage_mb)
