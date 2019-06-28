@@ -7,8 +7,9 @@ Info: This script creates csv files from defined fields
 import pandas as pd
 import random
 import math
+import string
 
-def strings_colums(n):
+def strings_columns(n):
     '''
     INPUTS:
     =======
@@ -24,18 +25,18 @@ def strings_colums(n):
     ## USING categories to spead up creation
     val_days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     val_hello = [ 'Hello', 'World']
-    val_locations = ['Dayton', 'Beavercreek', 'Oakwood', 'Fairfield', 'Huber', 'Riverdale']
+    val_locations = ['Dayton', 'Beavercreek', 'Oakwood', 'Fairfield', 'Huber Heights', 'Riverdale']
     val_days = val_days*math.ceil(n/len(val_days))
-    df = pd.DataFrame({'Days':val_days[:n]}, dtype='category')
-    val_hello =val_str *math.ceil(n/len(val_hello))
-    df['HELLO'] = pd.Seriese(val_hello[:n], dtype='category')
+    df = pd.DataFrame({'Days_c':val_days[:n]}, dtype='category')
+    val_hello =val_hello *math.ceil(n/len(val_hello))
+    df['HELLO_c'] = pd.Series(val_hello[:n], dtype='category')
     val_locations = val_locations *math.ceil(n/len(val_locations))
-    df['Locations'] = pd.Series({'Days':val_locations[:n]}, dtype='category')
+    df['Locations_c'] = pd.Series(val_locations[:n], dtype='category')
     return df
 
 
 
-def strings_colums_NoCat(n):
+def strings_columns_NoCat(n):
     '''
     INPUTS:
     =======
@@ -51,13 +52,13 @@ def strings_colums_NoCat(n):
     ## USING categories to spead up creation
     val_days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     val_hello = [ 'Hello', 'World']
-    val_locations = ['Dayton', 'Beavercreek', 'Oakwood', 'Fairfield', 'Huber', 'Riverdale']
+    val_locations = ['Dayton', 'Beavercreek', 'Oakwood', 'Fairfield', 'Huber Heights', 'Riverdale']
     val_days = val_days*math.ceil(n/len(val_days))
     df = pd.DataFrame({'Days':val_days[:n]})
-    val_hello =val_str *math.ceil(n/len(val_hello))
-    df['HELLO'] = pd.Seriese(val_hello[:n] )
+    val_hello =val_hello *math.ceil(n/len(val_hello))
+    df['HELLO'] = pd.Series(val_hello[:n] )
     val_locations = val_locations *math.ceil(n/len(val_locations))
-    df['Locations'] = pd.Series({'Days':val_locations[:n]})
+    df['Locations'] = pd.Series(val_locations[:n])
     return df
 
 
@@ -91,7 +92,7 @@ def int8_columns(n, r):
     return df
 
 
-def float_columns(n,r):
+def float_column(n,r):
     '''
     INPUTS:
     =======
@@ -106,7 +107,7 @@ def float_columns(n,r):
     return df
 
 
-def randrom_str(n,r):
+def random_str(n,r):
     '''
     INPUTS:
     =======
@@ -116,7 +117,8 @@ def randrom_str(n,r):
     ========
        df = dataframe (pandas dataframe with n rows)
     '''
-    list_str =[''.join(random.choice(chars) for _ in range(r)) for _ in range(n)]
+    chars = string.ascii_lowercase
+    list_str =[''.join(random.choice(chars) for i in range(r)) for j in range(n)]
     df = pd.DataFrame({"Random_String":list_str})
     return df
 

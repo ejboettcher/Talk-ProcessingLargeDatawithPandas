@@ -7,9 +7,13 @@ Luckily, we live in a time where most people have laptops processing power that 
 
 But, you say my data is BIG data so I neeeedddd even better computer.
 
-## Brief and Subset of History of Large data
+## Brief (and Subset) of History of Large data
 
 As soon as there has been paper there has been large data sets. For example, in the 1600  Johannes Kepler had to wait until Tycho Brahe died before he could get a hold of a large data sets to prove how planets orbit the sun.  
+
+|  ![watch](./images/watch.jpg)| Only equipment needed to measure speed of light |
+|:--|:---:|
+|![pen](./images/pen.jpeg)  |![telescope](./images/telescope.jpeg)
 
 And in 1676 Ole Roemer (Rømer) armed with only paper, pencil, telescope and wind up watch (which was not even good enough to navigate a ship with) calculated the speed of LIGHT within 30% by looking at Jupiter's moon Io.  
 
@@ -20,7 +24,7 @@ So we have it a bit easier.  With only having to deal with NaNs.
 But, you say my data is BIG and I want an answer today and not wait a decade.
 Lets talk about the library Pandas.
 
-## Python pandas
+## Python Pandas
 Python's Pandas is a high performance, easy to use library for analyzing structured data: csv files, SQLite etc.
 
 Pandas is fast, powerful and flexible.   It enables you to quickly parse data. But it is mainly designed to handle ~<100mb.  There are tools like Spark to handle LARGE data sets (100 gigabytes to terabytes).  Plus it does an amazing job at cleaning messy or real data.
@@ -58,14 +62,61 @@ In this tutorial, we will:
 
 
 ## How does categories work?
+![Python Categories](./images/numpy_vs_python.png)
 
-## Build large array
+Pandas category type uses integer values to map to the raw values in a column.  This mapping is useful whenever a column contains a limited set of values.
 
-## Create Large DF and save as csv
+So instead of writing "Sunday","Sunday","Sunday"... Pandas says "Sunday = 1" and the df =[1,1,1].
 
-## Test Memory on Cat and non cat
+To convert a column to the category dtype.
 
-## Read in via category
+```Python
+df['column name'].astype('category')
+```
+
+![SundaySunday df](./images/SundaySunday.png)
+
+## Large Data: Numbers
+
+```bash
+python int_floats_cats.py
+```
+
+### Reduced Frequency of Numbers in DF
+Let's try it again but reduce the frequency (e.g. Numbers repeat less) by increasing r to 240.
+
+
+```bash
+python int_floats_cats.py -r 240
+```
+
+### Increase SIZE
+
+```bash
+python int_floats_cats.py -r 7 -n 1000000
+```
+
+## Large Data: strings
+
+So lets see how we can reduce size of STRINGS arrays.
+If you have a column of strings that repeats, says days of week, states etc, then you may save memory if you switch to columns
+
+
+```bash
+python strings_cat.py
+```
+
+```bash
+python strings_cat.py -n 1000000
+```
+## SAVE DF  as `csv`
+
+```bash
+python strings_cat.py -n 1000000 -s 1 -r 20
+```
+
+
+## Read `csv` via category
 
 
 # Reference
