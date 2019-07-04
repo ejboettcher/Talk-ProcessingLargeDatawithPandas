@@ -30,6 +30,7 @@ Some even thought he played a hand in Brahe's death
 ## Brief (and Subset) of History of Large data cont.
 And in 1676 Ole Roemer (Rømer) armed with only paper, pencil, telescope and wind up watch (which was not even good enough to navigate a ship with) calculated the speed of LIGHT within 30% by looking at Jupiter's moon Io.  
  ![telescope](./images/telescope.jpeg)![watch](./images/watch.jpg)![pen](./images/pen.jpeg)
+ <br/>
 ####Only equipment needed to measure speed of light
 <br/>
 -------
@@ -104,50 +105,76 @@ val_days = ['Monday', 'Tuesday','Monday', 'Wednesday','Monday', 'Thursday', 'Fri
 ## Why
 
 (sans overhead)
-
+#### Numbers
 |memory usage|	int|	uint| float | 	bool|	complex|
 |:---:|:----|:----|:----|:----|:----:----|
 |1 bytes|		int8 (-128-127)|	uint8 (0-255)||bool| |
 |2 bytes|	int16	 (-32768 to 32767)|uint16 (0 to 65535)|float16 (Half precision)	| |			   |
 |4 bytes|		int32|	uint32 |	float32 (Single precision)|	|   |
 |8 bytes	|	int64	|uint64|float64| |  complex64 (rep. by 2 32-bit floats) |
+
+#### Strings
+Python uses three kinds of internal representations for Unicode strings:
+
+* 1 byte per char (Latin-1 encoding)
+* 2 bytes per char (UCS-2 encoding)
+* 4 bytes per char (UCS-4 encoding)
 -------------------------------------------------------------------
 
+
+
+## How does categories work?
+
+Pandas category type uses integer values to map to the raw values in a column.  
+<br/>
+This mapping is useful whenever a column contains a limited set of values.
+
+So instead of writing
+#### df = ["Sunday", "Sunday", "Sunday"]
+<br/>
+Pandas categories says
+#### Sunday = 1
+ and the dataframe in memory is now
+ #### df =[1,1,1]
+
+-------
 ## How does categories work?
 ![Python Categories](./images/numpy_vs_python.png)
+-------------------------------------------------------------------
 
-Pandas category type uses integer values to map to the raw values in a column.  This mapping is useful whenever a column contains a limited set of values.
-
-So instead of writing "Sunday","Sunday","Sunday"... Pandas says "Sunday = 1" and the df =[1,1,1].
-
-To convert a column to the category dtype.
+## Convert to Categories
+To convert a column to the category we set the data type (dtype).
 
 ```Python
 df['column name'].astype('category')
 ```
 
 ![SundaySunday df](./images/SundaySunday.png)
+-------------------------------------------------------------------
 
-## Large Data: Numbers
+## Interactive Part <br/> Large Data: Numbers
 
+In terminal, where this tutorial has been downloaded, type the following
 ```bash
 python int_floats_cats.py
 ```
-
+<br/>
 ### Reduced Frequency of Numbers in DF
-Let's try it again but reduce the frequency (e.g. Numbers repeat less) by increasing r to 240.
+Let's try it again but reduce the frequency (e.g. Numbers repeat less) by increasing the range of number from r = 4 to r = 240.
 
 
 ```bash
 python int_floats_cats.py -r 240
 ```
-
+<br/>
+---------
+## Large Data: Numbers cont..
 ### Increase SIZE
 
 ```bash
 python int_floats_cats.py -r 7 -n 1000000
 ```
-
+-------------------------------------------------------------------
 ## Large Data: strings
 
 So lets see how we can reduce size of STRINGS arrays.
@@ -157,20 +184,27 @@ If you have a column of strings that repeats, says days of week, states etc, the
 ```bash
 python strings_cat.py
 ```
-
+<br/><br/>
+###Now, lets make this BIGGGG
 
 ```bash
 python strings_cat.py -n 1000000
 ```
-NOTE: When we have a random string of characters of length 4
-  (e.g. 26 x 26 x 26 x 26 = 456,976) over 1/2 of the strings should repeat!
 
+<br/>
+####NOTE:
+ When we have a random string of characters of length 4<br/>
+  (e.g. 26 x 26 x 26 x 26 = 456,976) <br/>over 1/2 of the strings should repeat!
 
-## SAVE DF  as `csv`
+-------------------------------------------------------------------
+## Large Data: strings cont.
+
+### SAVE DF  as `csv`
 
 ```bash
 python strings_cat.py -n 1000000 -s 1 -r 20
 ```
+-------------------------------------------------------------------
 
 
 ## Read `csv` via category
@@ -185,6 +219,7 @@ Now with categories
 ```bash
 python read_awesome.py -c 1
 ```
+-------------------------------------------------------------------
 
 # Reference
 * https://www.dataquest.io/blog/pandas-big-data/

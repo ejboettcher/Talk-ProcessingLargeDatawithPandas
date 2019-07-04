@@ -42,7 +42,7 @@ body {
 }
 
 .reveal figure {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .reveal figcaption {
@@ -53,7 +53,7 @@ body {
 
 .reveal {
   font-family: 'Gotham-Book', 'Helvetica', Arial, sans-serif;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: normal;
   color: #333; }
 
@@ -70,7 +70,7 @@ body {
  * HEADERS  color: #F05B62;
  *********************************************/
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
   font-family: 'Gotham-Bold', Impact, sans-serif;
   font-weight: normal;
   line-height: 0.9em;
@@ -107,8 +107,8 @@ body {
  * OTHER
  *********************************************/
 .reveal p {
-  margin: 20px 0;
-  line-height: 1.3; }
+  margin: 1px 0;
+  line-height: 1.2; }
 
 /* Ensure certain elements are never larger than the slide itself */
 .reveal img, .reveal video, .reveal iframe {
@@ -140,13 +140,13 @@ body {
 
 .reveal ul ul, .reveal ul ol, .reveal ol ol, .reveal ol ul {
   display: block;
-  margin-left: 40px; }
+  margin-left: 30px; }
 
 .reveal dt {
   font-weight: bold; }
 
 .reveal dd {
-  margin-left: 40px; }
+  margin-left: 430px; }
 
 .reveal q, .reveal blockquote {
   quotes: none; }
