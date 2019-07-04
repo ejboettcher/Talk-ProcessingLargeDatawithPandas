@@ -8,8 +8,7 @@ def UserInputs():
     parser  = argparse.ArgumentParser()
     parser.add_argument("-r","--range", type=int, help="Max Range of numbers: 1-r",required=False, default=4)
     parser.add_argument("-n","--length", type=int, help="Length of df eg number of rows",required=False, default=10000)
-    parser.add_argument("-s","--save", type=int, help="save to csv",required=False, default=10000)
-
+    parser.add_argument("-s","--save", type=int, help="save to csv",required=False, default=0)
     args = parser.parse_args()
     return args
 

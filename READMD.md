@@ -5,11 +5,11 @@ Data sets can get large quickly.  You can quickly go from looking at a few 100 l
 
 Luckily, we live in a time where most people have laptops processing power that would have been the engineers who put a man on the moon swoon and/or would have thought to be impossible to make.
 
-But, you say my data is BIG data so I neeeedddd even better computer.
+But, you say my data is BIG data, so I neeeedddd a better computer.
 
 ## Brief (and Subset) of History of Large data
 
-As soon as there has been paper there has been large data sets. For example, in the 1600  Johannes Kepler had to wait until Tycho Brahe died before he could get a hold of a large data sets to prove how planets orbit the sun.  
+As soon as there has been paper there has been large data sets. For example, in the 1600 Johannes Kepler used Tycho Brahe large data set on planet observations to prove how planets orbit the sun.  Unfortunately, he had to wait until Tycho Brahe died before he could get a hold of a large data sets.  
 
 |  ![watch](./images/watch.jpg)| Only equipment needed to measure speed of light |
 |:--|:---:|
@@ -17,9 +17,9 @@ As soon as there has been paper there has been large data sets. For example, in 
 
 And in 1676 Ole Roemer (Rømer) armed with only paper, pencil, telescope and wind up watch (which was not even good enough to navigate a ship with) calculated the speed of LIGHT within 30% by looking at Jupiter's moon Io.  
 
-This required LOTS of observations over years and years by multiple people.  Since Romer was not trying to calculate the speed of light at the time, but when Io would have an ellipse, he must have had to recalculate he calculations over and over again by hand.
+This required LOTS of observations over years and years by multiple people.  Since Romer was not trying to calculate the speed of light at the time, but when Io would have an ellipse, he must have had to recalculate he calculations over and over again by hand to ensure there was not a mistake in the math or observations.
 
-So we have it a bit easier.  With only having to deal with NaNs.
+So we have it a bit easier, when we only having to deal with NaNs.
 
 But, you say my data is BIG and I want an answer today and not wait a decade.
 Lets talk about the library Pandas.
@@ -27,11 +27,11 @@ Lets talk about the library Pandas.
 ## Python Pandas
 Python's Pandas is a high performance, easy to use library for analyzing structured data: csv files, SQLite etc.
 
-Pandas is fast, powerful and flexible.   It enables you to quickly parse data. But it is mainly designed to handle ~<100mb.  There are tools like Spark to handle LARGE data sets (100 gigabytes to terabytes).  Plus it does an amazing job at cleaning messy or real data.
+Pandas is fast, powerful and flexible.   It enables you to quickly parse data. But it is mainly designed to handle ~<100mb.  There are other tools like Spark to handle LARGE data sets (100 gigabytes to terabytes), but Pandas does an amazing job at cleaning messy or real data.
 
 So what do you do when you have a gigabyte of real world data that you want to explore it and don't want to switch to Spark.  
 
-You can do old programming tricks like set integers to ints, floats to float 32 etc to reduce the memory size of your dataframe.  That works great for numbers, but what do you do when you have strings.
+You can do old programming tricks like set numbers to ints, floats to float32 etc to reduce the memory size of your dataframe.  That works great for numbers, but what do you do when you have strings.
 
 ~~~Python
 val_days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
@@ -106,9 +106,14 @@ If you have a column of strings that repeats, says days of week, states etc, the
 python strings_cat.py
 ```
 
+
 ```bash
 python strings_cat.py -n 1000000
 ```
+NOTE: When we have a random string of characters of length 4
+  (e.g. 26 x 26 x 26 x 26 = 456,976) over 1/2 of the strings should repeat!
+
+
 ## SAVE DF  as `csv`
 
 ```bash
@@ -118,6 +123,16 @@ python strings_cat.py -n 1000000 -s 1 -r 20
 
 ## Read `csv` via category
 
+First without using categories
+```bash
+python read_awesome.py
+
+```
+
+Now with categories
+```bash
+python read_awesome.py -c 1
+```
 
 # Reference
 * https://www.dataquest.io/blog/pandas-big-data/

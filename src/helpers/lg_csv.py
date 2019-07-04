@@ -29,7 +29,7 @@ def lg_csv_read(datafile, catcolumns, floatcolumns=[], datetimecol=[], noncatcol
     ========
        df: pandas dataframe (reduced memory df because categories are utilized!!)
     '''
-    column_tpyes = dict() # Build a dictonary of column types
+    column_types = dict() # Build a dictonary of column types
     for k in catcolumns:
         column_types[k]='category'
     for k in floatcolumns:
@@ -41,6 +41,7 @@ def lg_csv_read(datafile, catcolumns, floatcolumns=[], datetimecol=[], noncatcol
     else:
         df = pd.read_csv(datafile, usecols=columnsread, dtype=column_types)
     return df
+
 
 def fillNA_categories(df, labelsna, textstr='Unk'):
     '''
