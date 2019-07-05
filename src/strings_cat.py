@@ -16,12 +16,12 @@ def main(args):
     r = args.range
     n = args.length
     print('Building three DF with: ')
-    print('     range of random string in a row 1-',r)
+    print('     length of random string in a row 1-',r)
     print('     length of DF ',n)
     # Set the number of rows our DF is going to have.
-    df = build.strings_columns_NoCat(n) # Build an int df with number 1 to r
-    dfc = build.strings_columns(n) # Build a float df with num 1 to r
-    dfr = build.random_str(n,r) # Build a int8 df with num 1 to r
+    df =  build.strings_columns_NoCat(n) # Build 3 columns of string data withOUT Categories
+    dfc = build.strings_columns(n) # Build 2 columns of string data WITH categories
+    dfr = build.random_str(n,r) # Build a string df with 1 to r length
     # Make them into on DF
     df_All = pd.concat([df,dfc,dfr],axis=1 , sort=False)
     print("Top 10 rows of data")
@@ -29,21 +29,22 @@ def main(args):
 
     # Get Size
     print("Getting size of the DF we just made")
-    print("String   ",lg_csv.df_mem_usage(df))
-    print("String Column ",lg_csv.df_mem_usage(dfc))
-    print("Random String ",lg_csv.df_mem_usage(dfr))
+    print("String NO Categories     ",lg_csv.df_mem_usage(df))
+    print("String WITH Categories   ",lg_csv.df_mem_usage(dfc))
+    print("Random String (1 column) ",lg_csv.df_mem_usage(dfr))
     print("_____"*4)
-    print("Now lets make them into categories")
+    print("Now lets make them all into categories")
     # Make the DF into categories
-    names=["HELLO",'Locations','Days']
+    names = ["HELLO",'Locations','Days']
     dfsz_cat = lg_csv.df_mem_usage(df[names].astype('category'))
     dfsz = lg_csv.df_mem_usage(df[names])
     dfsave = int((float(dfsz[:-2])-float(dfsz_cat[:-2])) / float(dfsz[:-2]) * 100)
     dfcsz_cat = lg_csv.df_mem_usage(dfc.astype('category'))
     dfcsz = lg_csv.df_mem_usage(dfc)
     dfcsave = int((float(dfcsz[:-2])-float(dfcsz_cat[:-2]))/float(dfcsz[:-2]) * 100)
-    print("String  df    (plain df, category, SAVINGS)--->", dfsz,',',dfsz_cat,',',dfsave,'%')
-    print("String Cat df (plain df, category, SAVINGS)--->", dfcsz,',',dfcsz_cat,',',dfcsave,"%")
+    print("String Columns: HELLO, Locations, Days")
+    print("NO CAT to category (plain df, category, SAVINGS)--->", dfsz,',',dfsz_cat,',',dfsave,'%')
+    print("Cat df to category (plain df, category, SAVINGS)--->", dfcsz,',',dfcsz_cat,',',dfcsave,"%")
     #print("INT8 ",lg_csv.df_mem_usage(dfi8))
     print("___NOTE___"*4)
     #print("Categories reduced the size INT df!!")
@@ -55,7 +56,7 @@ def main(args):
     c = lg_csv.df_mem_usage(dfr['Random_String'].astype('category'))
     print("String: Random         ---> ",a)
     print("String: Random category---> ",c)
-    if c>a:
+    if float(c[:-2])>float(a[:-2]):
          print("Categories only made the DF memory use worse")
     else:
         print("__________________________"*2)

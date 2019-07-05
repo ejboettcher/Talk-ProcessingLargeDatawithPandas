@@ -92,7 +92,7 @@ def int8_columns(n, r):
     return df
 
 
-def float_column(n,r):
+def float_columns(n,r):
     '''
     INPUTS:
     =======

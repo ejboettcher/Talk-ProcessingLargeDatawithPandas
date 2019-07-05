@@ -130,12 +130,12 @@ Pandas category type uses integer values to map to the raw values in a column.
 This mapping is useful whenever a column contains a limited set of values.
 
 So instead of writing
-#### df = ["Sunday", "Sunday", "Sunday"]
+#### df.mydays = ["Sunday", "Sunday", "Sunday"]
 <br/>
 Pandas categories says
 #### Sunday = 1
  and the dataframe in memory is now
- #### df =[1,1,1]
+ #### df.mydays =[1,1,1]
 
 -------
 ## How does categories work?
@@ -159,6 +159,40 @@ In terminal, where this tutorial has been downloaded, type the following
 python int_floats_cats.py
 ```
 <br/>
+```bash
+Building three DF with:
+     range of numbers 1- 4
+     length of DF  10000
+Top 10 rows of data
+   INT  INT8     FLOAT
+1    2     4  3.329446
+2    2     4  1.478631
+3    2     3  1.338759
+4    3     1  1.846993
+5    1     2  2.787727
+6    4     3  1.116634
+7    1     2  1.064875
+8    3     3  3.146007
+9    3     2  2.201730
+Getting size of the DF we just made
+INT    0.0764MB
+INT8   0.0096MB
+FLOAT  0.0764MB
+____________________
+Now lets make them into categories
+INT  df (plain df, category, SAVINGS)---> 0.0764MB , 0.0098MB , 87 %
+INT8 df (plain df, category, SAVINGS)---> 0.0096MB , 0.0098MB , -2 %
+___NOTE______NOTE______NOTE______NOTE___
+Categories reduced the size INT df!!
+   BUT because of the overhead
+   it did not reduce the int8 size
+
+Now, lets try this with random Floats
+Float         --->  0.0764MB
+Float category--->  0.4079MB
+Categories only made the DF memory use worse
+```
+---------
 ### Reduced Frequency of Numbers in DF
 Let's try it again but reduce the frequency (e.g. Numbers repeat less) by increasing the range of number from r = 4 to r = 240.
 
@@ -166,13 +200,80 @@ Let's try it again but reduce the frequency (e.g. Numbers repeat less) by increa
 ```bash
 python int_floats_cats.py -r 240
 ```
-<br/>
+
+```Bash
+Building three DF with:
+     range of numbers 1- 240
+     length of DF  10000
+Top 10 rows of data
+   INT  INT8       FLOAT
+1   12   100  235.429842
+2   19    63  225.656414
+3   13    20  173.416396
+4   49   -60   36.324557
+5  147  -100   42.525923
+6   82    63   15.278578
+7   15   121  202.143259
+8   44   -43  225.630105
+9  211   103  179.905616
+Getting size of the DF we just made
+INT    0.0764MB
+INT8   0.0096MB
+FLOAT  0.0764MB
+____________________
+Now lets make them into categories
+INT  df (plain df, category, SAVINGS)---> 0.0764MB , 0.0307MB , 59 %
+INT8 df (plain df, category, SAVINGS)---> 0.0096MB , 0.0307MB , -219 %
+___NOTE______NOTE______NOTE______NOTE___
+Categories reduced the size INT df!!
+   BUT because of the overhead
+   it did not reduce the int8 size
+
+Now, lets try this with random Floats
+Float         --->  0.0764MB
+Float category--->  0.4079MB
+Categories only made the DF memory use worse
+```
 ---------
 ## Large Data: Numbers cont..
 ### Increase SIZE
 
 ```bash
 python int_floats_cats.py -r 7 -n 1000000
+```
+
+```Bash
+Building three DF with:
+     range of numbers 1- 7
+     length of DF  1000000
+Top 10 rows of data
+   INT  INT8     FLOAT
+1    5     1  2.860940
+2    4     6  4.540523
+3    1     7  3.755426
+4    7     6  3.327625
+5    5     1  4.071720
+6    3     4  6.763638
+7    1     4  5.278757
+8    2     3  6.207312
+9    2     4  1.792210
+Getting size of the DF we just made
+INT    7.6295MB
+INT8   0.9538MB
+FLOAT  7.6295MB
+____________________
+Now lets make them into categories
+INT  df (plain df, category, SAVINGS)---> 7.6295MB , 0.9541MB , 87 %
+INT8 df (plain df, category, SAVINGS)---> 0.9538MB , 0.9541MB , 0 %
+___NOTE______NOTE______NOTE______NOTE___
+Categories reduced the size INT df!!
+   BUT because of the overhead
+   it did not reduce the int8 size
+
+Now, lets try this with random Floats
+Float         --->  7.6295MB
+Float category--->  51.4442MB
+Categories only made the DF memory use worse
 ```
 -------------------------------------------------------------------
 ## Large Data: strings
@@ -184,17 +285,86 @@ If you have a column of strings that repeats, says days of week, states etc, the
 ```bash
 python strings_cat.py
 ```
-<br/><br/>
+
+```Bash
+Building three DF with:
+     length of random string in a row 1- 4
+     length of DF  10000
+Top 10 rows of data
+        Days  HELLO      Locations     Days_c HELLO_c    Locations_c Random_String
+1    Tuesday  World    Beavercreek    Tuesday   World    Beavercreek          xhka
+2  Wednesday  Hello        Oakwood  Wednesday   Hello        Oakwood          wiwh
+3   Thursday  World      Fairfield   Thursday   World      Fairfield          gahf
+4     Friday  Hello  Huber Heights     Friday   Hello  Huber Heights          ldou
+5   Saturday  World      Riverdale   Saturday   World      Riverdale          rynl
+6     Sunday  Hello         Dayton     Sunday   Hello         Dayton          oasv
+7     Monday  World    Beavercreek     Monday   World    Beavercreek          nuym
+8    Tuesday  Hello        Oakwood    Tuesday   Hello        Oakwood          gjvs
+9  Wednesday  World      Fairfield  Wednesday   World      Fairfield          nmwn
+Getting size of the DF we just made
+String NO Categories      2.6724MB
+String WITH Categories    0.0306MB
+Random String (1 column)  0.5818MB
+____________________
+Now lets make them all into categories
+String Columns: HELLO, Locations, Days
+NO CAT to category (plain df, category, SAVINGS)---> 2.6724MB , 0.0306MB , 98 %
+Cat df to category (plain df, category, SAVINGS)---> 0.0306MB , 0.0306MB , 0 %
+___NOTE______NOTE______NOTE______NOTE___
+
+Now, lets try this with random STRINGS
+String: Random         --->  0.5818MB
+String: Random category--->  0.9068MB
+Categories only made the DF memory use worse
+
+
+```
+----------
+## Larg Data: STRING
 ###Now, lets make this BIGGGG
 
 ```bash
 python strings_cat.py -n 1000000
 ```
-
-<br/>
 ####NOTE:
  When we have a random string of characters of length 4<br/>
   (e.g. 26 x 26 x 26 x 26 = 456,976) <br/>over 1/2 of the strings should repeat!
+```Bash
+Building three DF with:
+     length of random string in a row 1- 4
+     length of DF  1000000
+Top 10 rows of data
+        Days  HELLO      Locations     Days_c HELLO_c    Locations_c Random_String
+1    Tuesday  World    Beavercreek    Tuesday   World    Beavercreek          qbzd
+2  Wednesday  Hello        Oakwood  Wednesday   Hello        Oakwood          wixv
+3   Thursday  World      Fairfield   Thursday   World      Fairfield          vwjs
+4     Friday  Hello  Huber Heights     Friday   Hello  Huber Heights          xiiz
+5   Saturday  World      Riverdale   Saturday   World      Riverdale          owon
+6     Sunday  Hello         Dayton     Sunday   Hello         Dayton          jihl
+7     Monday  World    Beavercreek     Monday   World    Beavercreek          xwon
+8    Tuesday  Hello        Oakwood    Tuesday   Hello        Oakwood          zchj
+9  Wednesday  World      Fairfield  Wednesday   World      Fairfield          hnjt
+Getting size of the DF we just made
+String NO Categories      267.2333MB
+String WITH Categories    2.8631MB
+Random String (1 column)  58.1742MB
+____________________
+Now lets make them all into categories
+String Columns: HELLO, Locations, Days
+NO CAT to category (plain df, category, SAVINGS)---> 267.2333MB , 2.8630MB , 98 %
+Cat df to category (plain df, category, SAVINGS)---> 2.8631MB , 2.8631MB , 0 %
+___NOTE______NOTE______NOTE______NOTE___
+
+Now, lets try this with random STRINGS
+String: Random         --->  58.1742MB
+String: Random category--->  47.3977MB
+____________________________________________________
+WHAT.......
+   There was an improvement!!!
+   HOW  DID  THAT  HAPPEN????
+____________________________________________________
+
+```
 
 -------------------------------------------------------------------
 ## Large Data: strings cont.
@@ -204,6 +374,9 @@ python strings_cat.py -n 1000000
 ```bash
 python strings_cat.py -n 1000000 -s 1 -r 20
 ```
+
+This should produce a csv file called <br/>
+*My_Awesome.csv* with a size of 69.6MB
 -------------------------------------------------------------------
 
 
