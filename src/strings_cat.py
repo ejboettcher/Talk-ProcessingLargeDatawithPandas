@@ -74,3 +74,4 @@ if __name__=='__main__':
     if arg.save==1:
         print("Saving df as a csv")
         df.to_csv('My_Awesome.csv', index=False)
+        df[["HELLO",'Locations','Days',"HELLO_c",'Locations_c','Days_c']].to_csv('My_Awesome_cat.csv', index=False)

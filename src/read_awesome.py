@@ -9,6 +9,7 @@ def UserInputs():
     parser.add_argument("-c","--cat", type=int, help="User Categories to read in: c=1 is true, default false",required=False, default=0)
     parser.add_argument("-f","--file", type=str, help="csv file to read in",required=False, default="My_Awesome.csv")
     parser.add_argument("-d","--day", type=str, help="Day of week to pull out", required=False,default="")
+    parser.add_argument("-r", "--random", type=int, help="Read in file with random string", default=1)
     args = parser.parse_args()
     return args
 
@@ -16,7 +17,10 @@ def main(args):
     use_categories = args.cat
     tic = time.time()
     strcol = ["HELLO",'Locations','Days',"HELLO_c",'Locations_c','Days_c']
-    rancol = ['Random_String']
+    if arg.file == "My_Awesome.csv":
+        rancol = ['Random_String']
+    else:
+        rancol = []
     datafile = args.file
     if use_categories==0:
         print("Not using categories for any columns")
@@ -39,6 +43,9 @@ def main(args):
 if __name__=='__main__':
     print('Starting')
     arg = UserInputs()
+    if arg.random !=1:
+        arg.file = "./My_Awesome_cat.csv"
+        print(arg.file)
     df = main(arg)
     if len(arg.day)>0:
         tic = time.time()

@@ -372,11 +372,12 @@ ____________________________________________________
 ### SAVE DF  as `csv`
 
 ```bash
-python strings_cat.py -n 1000000 -s 1 -r 20
+python strings_cat.py -n 10000000 -s 1 -r 6
 ```
 
 This should produce a csv file called <br/>
-*My_Awesome.csv* with a size of 69.6MB
+* *My_Awesome.csv* with a size of 550.6MB and
+* *My_Awesome_cat.csv* with size of 486.2
 -------------------------------------------------------------------
 
 
@@ -392,6 +393,19 @@ Now with categories
 ```bash
 python read_awesome.py -c 1
 ```
+------
+## Same thing but without any random strings
+Now without the random strings
+```bash
+python read_awesome.py -r 0 -d Sunday
+```
+### With Categories!
+```bash
+python read_awesome.py -c 1 -r 0 -d Sunday
+```
+#### WOW
+The data in memory is **LESS** than the file size, by almost 90%!
+
 -------------------------------------------------------------------
 
 # Reference
