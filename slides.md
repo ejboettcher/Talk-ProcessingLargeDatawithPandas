@@ -75,18 +75,17 @@ Use old programming tricks like **set numbers to int8, floats16 to float32 etc**
 
 -------------------------------------------------------------------
 
-## Categories
-That works great for numbers, but what do you do when you have strings.
-
-~~~Python
-string_list = ['Hello', 'World', 'More Strings', 'Evelyn','Boettcher']
-
-~~~
-
-
+## Second Step: Use Categories
+For numbers, try Int8, floats16 etc, but when you have strings that repeat
 SWITCH to
 ### categories
-<br/>
+
+#### No repeating strings
+~~~Python
+string_list = ['Hello', 'World', 'More Strings', 'Evelyn','Boettcher']
+~~~
+
+#### Repeating String
 Many times strings data will be repetitive like days of week.
 
 ~~~Python
@@ -152,7 +151,8 @@ df['column name'].astype('category')
 ![SundaySunday df](./images/SundaySunday.png)
 -------------------------------------------------------------------
 
-## Interactive Part <br/> Large Data: Numbers
+## Interactive Part
+### Large Data: Numbers
 
 In terminal, where this tutorial has been downloaded, type the following
 ```bash
@@ -239,32 +239,32 @@ Categories only made the DF memory use worse
 ### Increase SIZE
 
 ```bash
-python int_floats_cats.py -r 7 -n 1000000
+python int_floats_cats.py -r 4 -n 1000000
 ```
 
 ```Bash
 Building three DF with:
-     range of numbers 1- 7
+     range of numbers 1- 4
      length of DF  1000000
 Top 10 rows of data
    INT  INT8     FLOAT
-1    5     1  2.860940
-2    4     6  4.540523
-3    1     7  3.755426
-4    7     6  3.327625
-5    5     1  4.071720
-6    3     4  6.763638
-7    1     4  5.278757
-8    2     3  6.207312
-9    2     4  1.792210
+1    2     2  2.684429
+2    2     4  1.696423
+3    1     2  2.607256
+4    3     1  1.247054
+5    4     3  2.413925
+6    2     3  3.141839
+7    1     1  3.438698
+8    2     2  3.584329
+9    1     3  1.019402
 Getting size of the DF we just made
 INT    7.6295MB
 INT8   0.9538MB
 FLOAT  7.6295MB
 ____________________
 Now lets make them into categories
-INT  df (plain df, category, SAVINGS)---> 7.6295MB , 0.9541MB , 87 %
-INT8 df (plain df, category, SAVINGS)---> 0.9538MB , 0.9541MB , 0 %
+INT  df (plain df, category, SAVINGS)---> 7.6295MB , 0.9539MB , 87 %
+INT8 df (plain df, category, SAVINGS)---> 0.9538MB , 0.9539MB , 0 %
 ___NOTE______NOTE______NOTE______NOTE___
 Categories reduced the size INT df!!
    BUT because of the overhead
@@ -274,6 +274,7 @@ Now, lets try this with random Floats
 Float         --->  7.6295MB
 Float category--->  51.4442MB
 Categories only made the DF memory use worse
+
 ```
 -------------------------------------------------------------------
 ## Large Data: strings
@@ -324,7 +325,7 @@ Categories only made the DF memory use worse
 ###Now, lets make this BIGGGG
 
 ```bash
-python strings_cat.py -n 1000000
+python strings_cat.py -n 1000000 -r 4
 ```
 ####NOTE:
  When we have a random string of characters of length 4<br/>
@@ -378,6 +379,11 @@ python strings_cat.py -n 10000000 -s 1 -r 6
 This should produce a csv file called <br/>
 * *My_Awesome.csv* with a size of 550.6MB and
 * *My_Awesome_cat.csv* with size of 486.2
+
+<br/>
+
+### This may take a while.
+Any questions so far?
 -------------------------------------------------------------------
 
 
@@ -407,7 +413,14 @@ python read_awesome.py -c 1 -r 0 -d Sunday
 The data in memory is **LESS** than the file size, by almost 90%!
 
 -------------------------------------------------------------------
+## Questions?
+* We created data that most *GUI* readers (Office Libre, Excel) can not read in.
+* We reduced the size of data in memory to something LESS than the file size!
+* Categories can be **Helpfull** or **Hurtfull** when we are dealing with large data.
+   * Please use care
 
+
+-------
 # Reference
 * https://www.dataquest.io/blog/pandas-big-data/
 * https://pandas.pydata.org/
