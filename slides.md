@@ -51,7 +51,7 @@ Since Romer was not trying to calculate the speed of light at the time, but when
 So we have it a bit easier, <br/> we only having to deal with:
 
 * NaNs
-* Slow downloads
+* Slow downloads speeds
 
 
 <br/>
@@ -90,11 +90,15 @@ Use old programming tricks like **set numbers to int8, floats16 to float32 etc**
 For numbers, try Int8, floats16 etc, but when you have strings that repeat
 SWITCH to
 ### categories
+<br/>
 
-#### No repeating strings
+### List of String Examples
+#### Non repeating strings
 
 ```Python
-string_list = ['Hello', 'World', 'More Strings', 'Evelyn','Boettcher']```
+string_list = ['Hello', 'World', 'More Strings', 'Evelyn','Boettcher']
+```
+<br/>
 
 
 #### Repeating String
@@ -114,7 +118,7 @@ val_days = ['Monday', 'Tuesday','Monday', 'Wednesday','Monday', 'Thursday', 'Fri
 * Speed up reading in csv files by using categories
 * Reduce the memory footprint by 90%
 -------------------------------------------------------------------
-## Why
+## Data Memory footprint
 
 (sans overhead)
 #### Numbers
@@ -165,6 +169,13 @@ df['column name'].astype('category')
 ```
 
 ![SundaySunday df](./images/SundaySunday.png)
+<br/>
+### But wait..
+Converting to categories is not always helpful.
+<br/>
+The following examples will show the power and pitfalls of categories
+
+
 -------------------------------------------------------------------
 
 ## Interactive Part
@@ -207,6 +218,8 @@ Now, lets try this with random Floats
 Float         --->  0.0764MB
 Float category--->  0.4079MB
 Categories only made the DF memory use worse
+
+.
 ```
 
 ---------
@@ -385,6 +398,8 @@ WHAT.......
    HOW  DID  THAT  HAPPEN????
 ____________________________________________________
 
+
+.
 ```
 
 -------------------------------------------------------------------
@@ -407,7 +422,8 @@ Any questions so far?
 -------------------------------------------------------------------
 
 
-## Read `csv` via category
+## Read in `My_Awesome.csv`
+#### Fact: this file contains a column of random strings
 
 First without using categories
 ```bash
@@ -420,7 +436,9 @@ Now with categories
 python read_awesome.py -c 1
 ```
 ------
-## Same thing but without any random strings
+## Read in `My_Awesome_cat.csv`
+#### Same data but without the column of random strings
+
 Now without the random strings
 ```bash
 python read_awesome.py -r 0 -d Sunday
