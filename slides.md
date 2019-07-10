@@ -12,8 +12,11 @@ Data sets can get large quickly.  You can quickly go from looking at a few 100 l
 Luckily, we live in a time where most people have laptops processing power that would have been the engineers who put a man on the moon swoon and/or would have thought to be impossible to make.
 
 <br/>
+
 ### But, you say,
-####"My data is BIG data, so I neeeedddd a better computer."
+
+#### "My data is BIG data, so I neeeedddd a better computer."
+
 -----------------------------------------------------------------------
 
 ## Brief (and Subset) of History of Large data
@@ -31,20 +34,25 @@ Some even thought he played a hand in Brahe's death
 And in 1676 Ole Roemer (Rømer) armed with only paper, pencil, telescope and wind up watch (which was not even good enough to navigate a ship with) calculated the speed of LIGHT within 30% by looking at Jupiter's moon Io.  
  ![telescope](./images/telescope.jpeg)![watch](./images/watch.jpg)![pen](./images/pen.jpeg)
  <br/>
-####Only equipment needed to measure speed of light
+#### Only equipment needed to measure speed of light
 <br/>
+
 -------
 ## Measuring the Speed of Light
 
 This required LOTS of observations over years and years by multiple people.  
 
-Since Romer was not trying to calculate the speed of light at the time, but when Io would have an ellipse, he must have had to recalculate he calculations over and over again by hand to ensure there was not a mistake in the math or observations.
+Since Romer was not trying to calculate the speed of light at the time, but when Io would have an eclipse, he must have had to recalculate he calculations over and over again by hand to ensure there was not a mistake in the math or observations.
+
 -----------------------------------------------------------------------
+
 ## Brief (and Subset) of History of Large data cont..
-So we have it a bit easier, <br/>when we only having to deal with:
+
+So we have it a bit easier, <br/> we only having to deal with:
 
 * NaNs
 * Slow downloads
+
 
 <br/>
 ### But, you say,
@@ -52,6 +60,7 @@ So we have it a bit easier, <br/>when we only having to deal with:
 
 
 ### Lets talk about the Python library Pandas.
+
 -----------------------------------------------------------------------
 ## Python Pandas
 Python's Pandas is a high performance, easy to use library for analyzing structured data: csv files, SQLite etc.
@@ -60,7 +69,9 @@ Pandas is fast, powerful and flexible.   It enables you to quickly parse data. B
 
 There are other tools like Spark to handle LARGE data sets (100 gigabytes to terabytes), but...
 #### Pandas does an amazing job at cleaning messy / real data.
+
 -----------------------------------------------------------------------
+
 ## How does one handle Large data with Pandas
 When you have a gigabyte of real world data <br/>
 and  you want to:
@@ -81,16 +92,18 @@ SWITCH to
 ### categories
 
 #### No repeating strings
-~~~Python
-string_list = ['Hello', 'World', 'More Strings', 'Evelyn','Boettcher']
-~~~
+
+```Python
+string_list = ['Hello', 'World', 'More Strings', 'Evelyn','Boettcher']```
+
 
 #### Repeating String
 Many times strings data will be repetitive like days of week.
 
-~~~Python
+```Python
 val_days = ['Monday', 'Tuesday','Monday', 'Wednesday','Monday', 'Thursday', 'Friday', 'Saturday','Monday','Monday', 'Sunday']
-~~~
+```
+
 -------------------------------------------------------------------
 # Outline
 ### In this tutorial, we will:
@@ -105,6 +118,7 @@ val_days = ['Monday', 'Tuesday','Monday', 'Wednesday','Monday', 'Thursday', 'Fri
 
 (sans overhead)
 #### Numbers
+
 |memory usage|	int|	uint| float | 	bool|	complex|
 |:---:|:----|:----|:----|:----|:----:----|
 |1 bytes|		int8 (-128-127)|	uint8 (0-255)||bool| |
@@ -132,13 +146,15 @@ So instead of writing
 #### df.mydays = ["Sunday", "Sunday", "Sunday"]
 <br/>
 Pandas categories says
+
 #### Sunday = 1
  and the dataframe in memory is now
- #### df.mydays =[1,1,1]
+#### df.mydays =[1,1,1]
 
 -------
 ## How does categories work?
 ![Python Categories](./images/numpy_vs_python.png)
+
 -------------------------------------------------------------------
 
 ## Convert to Categories
@@ -192,7 +208,9 @@ Float         --->  0.0764MB
 Float category--->  0.4079MB
 Categories only made the DF memory use worse
 ```
+
 ---------
+
 ### Reduced Frequency of Numbers in DF
 Let's try it again but reduce the frequency (e.g. Numbers repeat less) by increasing the range of number from r = 4 to r = 240.
 
@@ -234,6 +252,7 @@ Float         --->  0.0764MB
 Float category--->  0.4079MB
 Categories only made the DF memory use worse
 ```
+
 ---------
 ## Large Data: Numbers cont..
 ### Increase SIZE
@@ -276,6 +295,7 @@ Float category--->  51.4442MB
 Categories only made the DF memory use worse
 
 ```
+
 -------------------------------------------------------------------
 ## Large Data: strings
 
@@ -321,15 +341,15 @@ Categories only made the DF memory use worse
 
 ```
 ----------
-## Larg Data: STRING
-###Now, lets make this BIGGGG
+## Large Data: STRING
+### Now, lets make this BIGGGG
 
 ```bash
 python strings_cat.py -n 1000000 -r 4
 ```
-####NOTE:
+#### Interesting Fact:
  When we have a random string of characters of length 4<br/>
-  (e.g. 26 x 26 x 26 x 26 = 456,976) <br/>over 1/2 of the strings should repeat!
+  (e.g. 26 x 26 x 26 x 26 = 456,976) <br/>Therefor over 1/2 of the strings should repeat!
 ```Bash
 Building three DF with:
      length of random string in a row 1- 4
