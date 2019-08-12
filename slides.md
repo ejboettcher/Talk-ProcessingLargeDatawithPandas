@@ -5,8 +5,10 @@
 ### By Evelyn J. Boettcher
 
 #### DiDacTex, LLC
-
-## [Link to Repo](https://github.com/DiDacTexGit/Talk-ProcessingLargeDatawithPandas)
+</br>
+</br>
+### Link to Repo
+[https://github.com/DiDacTexGit/Talk-ProcessingLargeDatawithPandas](https://github.com/DiDacTexGit/Talk-ProcessingLargeDatawithPandas)
 
 -----------------------------------------------------------------------
 ## Motivation
@@ -34,7 +36,7 @@ Some even thought he played a hand in Brahe's death
 
 -----------------------------------------------------------------------
 ## Brief (and Subset) of History of Large data cont.
-And in 1676 Ole Roemer (Rømer) armed with only paper, pencil, telescope and wind up watch (which was not even good enough to navigate a ship with) calculated the speed of LIGHT within 30% by looking at Jupiter's moon Io.  
+And in 1676 Ole Roemer (Rømer) armed with only paper, pencil, telescope and a wind up watch (which was not even good enough to navigate a ship with) calculated the speed of LIGHT within 30% by looking at Jupiter's moon Io.  
  ![telescope](./images/telescope.jpeg)![watch](./images/watch.jpg)![pen](./images/pen.jpeg)
  <br/>
 #### Only equipment needed to measure speed of light
@@ -105,7 +107,7 @@ string_list = ['Hello', 'World', 'More Strings', 'Evelyn','Boettcher']
 
 
 #### Repeating String
-Many times strings data will be repetitive like days of week.
+Many times string data will be repetitive, like it will only contain days of week.
 
 ```Python
 val_days = ['Monday', 'Tuesday','Monday', 'Wednesday','Monday', 'Thursday', 'Friday', 'Saturday','Monday','Monday', 'Sunday']
