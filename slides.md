@@ -5,6 +5,9 @@
 ### By Evelyn J. Boettcher
 
 #### DiDacTex, LLC
+
+## [Link to Repo](https://github.com/DiDacTexGit/Talk-ProcessingLargeDatawithPandas)
+
 -----------------------------------------------------------------------
 ## Motivation
 Data sets can get large quickly.  You can quickly go from looking at a few 100 lines and a handful of columns to a million lines and hundred of columns.  
@@ -374,7 +377,7 @@ Top 10 rows of data
 3   Thursday  World      Fairfield   Thursday   World      Fairfield          vwjs
 4     Friday  Hello  Huber Heights     Friday   Hello  Huber Heights          xiiz
 5   Saturday  World      Riverdale   Saturday   World      Riverdale          owon
-6     Sunday  Hello         Dayton     Sunday   Hello         Dayton          jihl
+6     Sunday  Hello    https://github.com/DiDacTexGit/Talk-ProcessingLargeDatawithPandas     Dayton     Sunday   Hello         Dayton          jihl
 7     Monday  World    Beavercreek     Monday   World    Beavercreek          xwon
 8    Tuesday  Hello        Oakwood    Tuesday   Hello        Oakwood          zchj
 9  Wednesday  World      Fairfield  Wednesday   World      Fairfield          hnjt
@@ -383,7 +386,7 @@ String NO Categories      267.2333MB
 String WITH Categories    2.8631MB
 Random String (1 column)  58.1742MB
 ____________________
-Now lets make them all into categories
+Now lets make them all https://github.com/DiDacTexGit/Talk-ProcessingLargeDatawithPandasinto categories
 String Columns: HELLO, Locations, Days
 NO CAT to category (plain df, category, SAVINGS)---> 267.2333MB , 2.8630MB , 98 %
 Cat df to category (plain df, category, SAVINGS)---> 2.8631MB , 2.8631MB , 0 %
