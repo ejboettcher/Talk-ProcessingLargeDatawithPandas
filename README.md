@@ -10,6 +10,12 @@ This repository contains a tutorial and supporting scripts to show case the powe
 
 * *slides.md*
 
+## Website
+The tutorial is hosted here
+
+* [Link to talk](https://didactexgit.github.io/Talk-ProcessingLargeDatawithPandas/)
+
+
 The tutorial can be run as an html slide deck.
 
 ## Slide Deck
