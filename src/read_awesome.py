@@ -35,7 +35,7 @@ def main(args):
     print("_____"*10)
     print('Now lets look at size')
     print("Memory of Df is: ",lg_csv.df_mem_usage(df))
-    print("Top 10 rows of data")
+    print("Top 4 rows of data")
     print(df[1:5])
     return df
 

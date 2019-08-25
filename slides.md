@@ -55,7 +55,7 @@ Since Romer was not trying to calculate the speed of light at the time, but when
 
 So we have it a bit easier, <br/> we only having to deal with:
 
-* NaNs
+* NaNs: Not A Number
 * Slow downloads speeds
 
 
@@ -157,7 +157,7 @@ So instead of writing
 Pandas categories says
 
 #### Sunday = 1
- and the dataframe in memory is now
+ and the dataframe **in memory** is effectively now
 #### df.mydays =[1,1,1]
 
 -------
@@ -186,11 +186,16 @@ The following examples will show the power and pitfalls of categories
 ## Interactive Part
 ### Large Data: Numbers
 
-In terminal, where this tutorial has been downloaded, type the following
+* Open a terminal then go to the folder where this tutorial has been downloaded, type the following
+```bash
+cd src
+```
+then type.
 ```bash
 python int_floats_cats.py
 ```
 <br/>
+
 ```bash
 Building three DF with:
      range of numbers 1- 4
@@ -424,6 +429,47 @@ This should produce a csv file called <br/>
 
 ### This may take a while.
 Any questions so far?
+
+</br>
+
+```bash
+Starting
+Building three DF with:
+     length of random string in a row 1- 6
+     length of DF  10000000
+Top 10 rows of data
+        Days  HELLO      ...         Locations_c Random_String
+1    Tuesday  World      ...         Beavercreek        ahlcks
+2  Wednesday  Hello      ...             Oakwood        rwccxh
+3   Thursday  World      ...           Fairfield        ihyieo
+4     Friday  Hello      ...       Huber Heights        rtxevt
+5   Saturday  World      ...           Riverdale        whpjhe
+6     Sunday  Hello      ...              Dayton        vktted
+7     Monday  World      ...         Beavercreek        klajfi
+8    Tuesday  Hello      ...             Oakwood        eneums
+9  Wednesday  World      ...           Fairfield        jvruya
+
+[9 rows x 7 columns]
+Getting size of the DF we just made
+String NO Categories      2672.3318MB
+String WITH Categories    28.6123MB
+Random String (1 column)  600.8149MB
+____________________
+Now lets make them all into categories
+String Columns: HELLO, Locations, Days
+NO CAT to category (plain df, category, SAVINGS)---> 2672.3318MB , 28.6122MB , 98 %
+Cat df to category (plain df, category, SAVINGS)---> 28.6123MB , 28.6123MB , 0 %
+___NOTE______NOTE______NOTE______NOTE___
+
+Now, lets try this with random STRINGS
+String: Random         --->  600.8149MB
+String: Random category--->  949.3466MB
+Categories only made the DF memory use worse
+
+
+.
+```
+
 -------------------------------------------------------------------
 
 
@@ -440,11 +486,36 @@ Now with categories
 ```bash
 python read_awesome.py -c 1
 ```
-------
-## Read in `My_Awesome_cat.csv`
-#### Same data but without the column of random strings
+</br>
 
-Now without the random strings
+```Bash
+Starting
+USING CATEGORIES for columns that make sense.
+__________________________________________________
+
+It took this many seconds to read in the csv file 12.43
+__________________________________________________
+Now lets look at size
+Memory of Df is:  658.0381MB
+Top 4 rows of data
+        Days  HELLO      Locations     Days_c HELLO_c    Locations_c Random_String
+1    Tuesday  World    Beavercreek    Tuesday   World    Beavercreek        ahlcks
+2  Wednesday  Hello        Oakwood  Wednesday   Hello        Oakwood        rwccxh
+3   Thursday  World      Fairfield   Thursday   World      Fairfield        ihyieo
+4     Friday  Hello  Huber Heights     Friday   Hello  Huber Heights        rtxevt
+
+
+.
+
+```
+------
+## Read in...
+ `My_Awesome_cat.csv` (Files size: ~486MB)
+
+</br>
+* Same data as My_Awesome.csv, but without the column of random strings
+
+####Now, read in the data and find all of the Sundays in the "Days" column
 ```bash
 python read_awesome.py -r 0 -d Sunday
 ```
@@ -455,12 +526,40 @@ python read_awesome.py -c 1 -r 0 -d Sunday
 #### WOW
 The data in memory is **LESS** than the file size, by almost 90%!
 
+```Bash
+Starting
+./My_Awesome_cat.csv
+USING CATEGORIES for columns that make sense.
+__________________________________________________
+
+It took this many seconds to read in the csv file 7.85
+__________________________________________________
+Now lets look at size
+Memory of Df is:  57.2233MB
+Top 4 rows of data
+   HELLO      Locations       Days HELLO_c    Locations_c     Days_c
+1  World    Beavercreek    Tuesday   World    Beavercreek    Tuesday
+2  Hello        Oakwood  Wednesday   Hello        Oakwood  Wednesday
+3  World      Fairfield   Thursday   World      Fairfield   Thursday
+4  Hello  Huber Heights     Friday   Hello  Huber Heights     Friday
+13    Sunday
+20    Sunday
+27    Sunday
+Name: Days, dtype: category
+Categories (7, object): [Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday]
+__________________________________________________
+
+It took this many seconds 0.431 to find  Sunday
+__________________________________________________
+
+
+```
 -------------------------------------------------------------------
 ## Questions?
 * We created data that most *GUI* readers (Office Libre, Excel) can not read in.
 * We reduced the size of data in memory to something LESS than the file size!
 * Categories can be **Helpfull** or **Hurtfull** when we are dealing with large data.
-   * Please use care
+   * Please use Pandas with care
 
 
 -------
