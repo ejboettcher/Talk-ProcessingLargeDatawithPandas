@@ -7,10 +7,11 @@ You can quickly go from looking at a few 100 lines and a handful of columns to a
 Python Pandas with smart use of Categories can enable on to reduce the size of your data in memory by up to 90%.
 
 This repository contains a tutorial and supporting scripts to show case the power of python pandas with categories.  
-The tutorial is the file called:
+
+The tutorial located in the file called:
 * *slides.md*
 
-## Slides Hosted on a Webserver
+## Tutorial Hosted on a Webserver
 
 The tutorial is hosted here
 
