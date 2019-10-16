@@ -2,11 +2,13 @@
 
 # Motivation
 Data sets can get large quickly.  
-You can quickly go from looking at a few 100 lines and a handful of columns to a million lines and hundred of columns.  
+You can quickly go from looking at:
+* a few 100 lines and a handful of columns to...
+* a million lines and with hundred of columns.  
 
-Python Pandas with smart use of Categories can enable on to reduce the size of your data in memory by up to 90%.
+Python Pandas (with smart use of Categories) can enable one to reduce the size of ones data in memory by up to 90%.
 
-This repository contains a tutorial and supporting scripts to show case the power of python pandas with categories.  
+This repository contains a tutorial and supporting scripts to showcase the power of python pandas with categories.  
 
 The tutorial located in the file called:
 * *slides.md*
