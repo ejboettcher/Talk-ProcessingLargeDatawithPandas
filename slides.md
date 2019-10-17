@@ -7,7 +7,8 @@
 #### DiDacTex, LLC
 </br>
 </br>
-### Link to Repo
+
+### Link to Repo 
 [https://github.com/DiDacTexGit/Talk-ProcessingLargeDatawithPandas](https://github.com/DiDacTexGit/Talk-ProcessingLargeDatawithPandas)
 
 -----------------------------------------------------------------------
@@ -36,6 +37,7 @@ Some even thought he played a hand in Brahe's death
 
 -----------------------------------------------------------------------
 ## Brief (and Subset) of History of Large data cont.
+
 And in 1676 Ole Roemer (Rømer) armed with only paper, pencil, telescope and a wind up watch (which was not even good enough to navigate a ship with) calculated the speed of LIGHT within 30% by looking at Jupiter's moon Io.  
  ![telescope](./images/telescope.jpeg)![watch](./images/watch.jpg)![pen](./images/pen.jpeg)
  <br/>
@@ -68,11 +70,13 @@ So we have it a bit easier, <br/> we only having to deal with:
 
 -----------------------------------------------------------------------
 ## Python Pandas
+
 Python's Pandas is a high performance, easy to use library for analyzing structured data: csv files, SQLite etc.
 
 Pandas is fast, powerful and flexible.   It enables you to quickly parse data. But it is mainly designed to handle ~<100mb.  
 
 There are other tools like Spark to handle LARGE data sets (100 gigabytes to terabytes), but...
+
 #### Pandas does an amazing job at cleaning messy / real data.
 
 -----------------------------------------------------------------------
@@ -92,6 +96,7 @@ Use old programming tricks like **set numbers to int8, floats16 to float32 etc**
 -------------------------------------------------------------------
 
 ## Second Step: Use Categories
+
 For numbers, try Int8, floats16 etc, but when you have strings that repeat
 SWITCH to
 ### categories
@@ -555,6 +560,7 @@ __________________________________________________
 
 ```
 -------------------------------------------------------------------
+
 ## Questions?
 * We created data that most *GUI* readers (Office Libre, Excel) can not read in.
 * We reduced the size of data in memory to something LESS than the file size!
@@ -563,6 +569,7 @@ __________________________________________________
 
 
 -------
+
 # Reference
 * https://www.dataquest.io/blog/pandas-big-data/
 * https://pandas.pydata.org/
