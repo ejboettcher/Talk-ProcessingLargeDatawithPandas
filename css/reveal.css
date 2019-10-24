@@ -1647,3 +1647,13 @@ body {
 .zoomed .reveal .roll span:after {
 	visibility: hidden;
 }
+
+
+/*FIREFOX FIX*/
+
+@-moz-document url-prefix() {
+	.reveal .slides>section {
+	  left: 1%;
+	  top: -50%;
+	}
+  }
