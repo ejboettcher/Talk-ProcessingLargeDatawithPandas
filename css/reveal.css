@@ -1657,3 +1657,17 @@ body {
 	  top: -50%;
 	}
   }
+
+  /*CHROME MOBIE FIX*/
+
+  @media only screen and (max-device-width: 480px) {
+	.reveal .slides>section {
+		left: 2%;
+	}
+}
+
+@media only screen and (max-device-width: 1024px) {
+	.reveal .slides>section {
+		left: 2%;
+	}
+}
