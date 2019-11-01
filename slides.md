@@ -8,14 +8,14 @@
 </br>
 </br>
 
-### Link to Repo 
+### Link to Repo
 [https://github.com/DiDacTexGit/Talk-ProcessingLargeDatawithPandas](https://github.com/DiDacTexGit/Talk-ProcessingLargeDatawithPandas)
 
 -----------------------------------------------------------------------
 ## Motivation
 Data sets can get large quickly.  You can quickly go from looking at a few 100 lines and a handful of columns to a million lines and hundred of columns.  
 
-Luckily, we live in a time where most people have laptops processing power that would have been the engineers who put a man on the moon swoon and/or would have thought to be impossible to make.
+Luckily, we live in a time where most people have laptops with processing power that would have made the engineers who put a man on the moon swoon and/or would have thought to be impossible to make.
 
 <br/>
 
@@ -25,7 +25,7 @@ Luckily, we live in a time where most people have laptops processing power that 
 
 -----------------------------------------------------------------------
 
-## Brief (and Subset) of History of Large data
+## Brief (and Subset) History of Large data
 
 As soon as there has been paper<br/> there has been large data sets.
 
@@ -36,7 +36,7 @@ Unfortunately, he had to wait until Tycho Brahe died before he could get a hold 
 Some even thought he played a hand in Brahe's death
 
 -----------------------------------------------------------------------
-## Brief (and Subset) of History of Large data cont.
+## Brief (and Subset) History of Large data cont.
 
 And in 1676 Ole Roemer (Rømer) armed with only paper, pencil, telescope and a wind up watch (which was not even good enough to navigate a ship with) calculated the speed of LIGHT within 30% by looking at Jupiter's moon Io.  
  ![telescope](./images/telescope.jpeg)![watch](./images/watch.jpg)![pen](./images/pen.jpeg)
