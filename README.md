@@ -13,7 +13,7 @@ This repository contains a tutorial and supporting scripts to showcase the power
 The tutorial located in the file called:
 * *slides.md*
 
-## Tutorial Hosted on a Webserver
+## Web Tutorial
 
 The tutorial is hosted here
 
@@ -21,6 +21,7 @@ The tutorial is hosted here
 
 
 ## Outline
+
 In this tutorial, we will:
 * Learn how Python uses memory with Pandas
 * How to reduce the Pandas' dataframe memory footprint.
@@ -47,7 +48,11 @@ df['column name'].astype('category')
 
 ## Slide Deck
 The tutorial can be run locally as an html slide deck.
-Assuming Python3. To activate the html you need to first set up a server in the main directory.  This can be done via python.
+To activate the html you need to first set up a server in the main directory. 
+
+</br>
+
+This can be done via python (version 3).
 
 ```python
 python -m  http.server
