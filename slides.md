@@ -6,7 +6,7 @@
 
 #### DiDacTex, LLC
 
-<br>
+<br/>
 
 
 ### Link to Repo
@@ -21,7 +21,7 @@ Luckily, we live in a time where most people have laptops with processing power
 that would have made the engineers who put a man on the moon swoon. 
 At the very least, doubt it would be possible to make.
 
-<br>
+<br/>
 
 ### But, you say,
 
@@ -37,7 +37,10 @@ As soon as there was paper and pen,
 
 For example, in the 1600 Johannes Kepler used Tycho Brahe large data set on planet observations to prove how planets orbit the sun.  
 
+<br/>
+
 Unfortunately, he had to wait until Tycho Brahe died before he could get a hold of a large data set.  
+<br/>
 
 
 #### Some even thought he played a hand in Brahe's death
@@ -51,7 +54,10 @@ calculated the speed of LIGHT within 30% by looking at Jupiter's moon Io.
 
 (NOTE: prior to this people thought that light was instantaneous!  
 His prediction for Io was off by a few minutes.)
- ![telescope](./images/telescope.jpeg)![watch](./images/watch.jpg)![pen](./images/pen.jpeg)
+
+![telescope](./images/telescope.jpeg)
+![watch](./images/watch.jpg)
+![pen](./images/pen.jpeg)
 
  <br/>
  
@@ -69,9 +75,12 @@ but when Io would have an eclipse,
 he must have had to recalculate he calculations over and over again
 by hand to ensure there was not a mistake in the math or observations.
 
+<br/>
+
 ### Roemer's Conclusion
+
 My work is correct, the timing is off because light moves at a finite speed.  
-d
+
 -----------------------------------------------------------------------
 
 ## Brief of History (small subset) of Large Data cont..
@@ -81,11 +90,13 @@ We have it a bit easier, <br/> we only having to deal with:
 * NaNs: Not A Number
 * Slow downloads speeds
 
+<br/>
 
 
 ### But, you say,
 #### "My data is BIG and I want an answer today and not wait a decade."
 
+<br/>
 
 ### Lets talk about the Python library Pandas.
 
@@ -94,10 +105,13 @@ We have it a bit easier, <br/> we only having to deal with:
 
 Python's Pandas is a high performance, easy to use library for analyzing structured
  data: csv files, json, SQLite etc.
+<br/>
 
 Pandas is fast, powerful and flexible. 
 It enables you to quickly parse data. 
 But, it is mainly designed to handle ~<100mb.  
+
+<br/>
 
 There are other tools like Spark to handle LARGE data sets 
 (100 gigabytes to terabytes), but...
@@ -114,13 +128,13 @@ and  you want to:
 * Use your laptop and
 * You don't want to switch to Spark.  
 
-<br>
+<br/>
 
 ### Step One:
 
 Use old programming tricks like set numbers to 
 ***int8***, ***floats16***, or ***float32*** etc to 
-reduce the memory size of your dataframe.  
+reduce the memory size of your DataFrame.  
 
 -------------------------------------------------------------------
 
@@ -130,7 +144,7 @@ For numbers, try Int8, floats16 etc, but when you have strings that ***repeat***
 SWITCH to
 ### categories
 
-<br>
+<br/>
 
 ### List of String Examples
 #### Non repeating strings
@@ -184,7 +198,7 @@ Python uses three kinds of internal representations for Unicode strings:
 ## How does categories work?
 
 Pandas category type uses integer values to map to the raw values in a column.  
-<br>
+<br/>
 
 This mapping is useful whenever a column contains a limited set of values.
 
@@ -198,7 +212,7 @@ Pandas categories says
 
 and the DataFrame **in memory** is effectively now
 
-#### df.mydays =[1,1,1]
+#### df.mydays = [1, 1, 1]
 
 -------
 
@@ -216,11 +230,12 @@ df['column name'].astype('category')
 
 ![SundaySunday df](./images/SundaySunday.png)
 
-<br>
+<br/>
 
 ### But wait..
+
 Converting to categories is not always helpful.
-<br>
+<br/>
 The following examples will show the power and pitfalls of categories
 
 
@@ -240,7 +255,7 @@ then type.
 ```bash
 python int_floats_cats.py
 ```
-<br>
+<br/>
 
 
 ```bash
@@ -429,9 +444,9 @@ python strings_cat.py -n 1000000 -r 4
 #### Interesting Fact:
 
 When we have a random string of characters of length 4 (26 char in the alphabet)
-<br>
+<br/>
     (e.g. 26 x 26 x 26 x 26 = 456,976) 
-<br>
+<br/>
 
 Therefor over 1/2 of the strings should repeat!
 
@@ -487,12 +502,12 @@ HOW  DID  THAT  HAPPEN????
 python strings_cat.py -n 10000000 -s 1 -r 6
 ```
 
-This should produce a csv file called <br>
+This should produce a csv file called <br/>
 
 * *My_Awesome.csv* with a size of 550.6MB and
 * *My_Awesome_cat.csv* with size of 486.2
 
-<br>
+<br/>
 
 ### This may take a while.
 Any questions so far?
@@ -636,7 +651,7 @@ __________________________________________________
 ## Questions?
 * We created data that most *GUI* readers (Office Libre, Excel) can not read in.
 * We reduced the size of data in memory to something LESS than the file size!
-* Categories can be **Helpfull** or **Hurtfull** when we are dealing with large data.
+* Categories can be **Helpful** or **Hurtful** when we are dealing with large data.
    * Please use Pandas with care
 
 
