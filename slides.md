@@ -6,6 +6,7 @@
 
 #### DiDacTex, LLC
 
+
 <br/>
 
 
@@ -21,6 +22,7 @@ Luckily, we live in a time where most people have laptops with processing power
 that would have made the engineers who put a man on the moon swoon. 
 At the very least, doubt it would be possible to make.
 
+
 <br/>
 
 ### But, you say,
@@ -30,7 +32,9 @@ Well this talk is for you.
 
 -----------------------------------------------------------------------
 
+
 ## Brief History (small subset) of Large Data
+
 
 As soon as there was paper and pen, 
 <br/> there has been large data sets.
@@ -46,6 +50,7 @@ Unfortunately, he had to wait until Tycho Brahe died before he could get a hold 
 #### Some even thought he played a hand in Brahe's death
 
 -----------------------------------------------------------------------
+
 ## Brief  History (small subset) of Large Data cont.
 
 And in 1676 Ole Roemer (Rømer) armed with only paper, pencil, telescope and 
@@ -58,6 +63,7 @@ His prediction for Io was off by a few minutes.)
 ![telescope](./images/telescope.jpeg)
 ![watch](./images/watch.jpg)
 ![pen](./images/pen.jpeg)
+
 
  <br/>
  
@@ -142,6 +148,7 @@ reduce the memory size of your DataFrame.
 
 For numbers, try Int8, floats16 etc, but when you have strings that ***repeat***
 SWITCH to
+
 ### categories
 
 <br/>
@@ -157,7 +164,9 @@ string_list = ['Hello', 'World', 'More Strings', 'Evelyn','Boettcher']
 Many times string data will be repetitive, like it will only contain days of week.
 
 ```Python
-val_days = ['Monday', 'Tuesday','Monday', 'Wednesday','Monday', 'Thursday', 'Friday', 'Saturday','Monday','Monday', 'Sunday']
+val_days = ['Monday', 'Tuesday', 'Monday', 'Wednesday', 'Monday', 
+            'Thursday', 'Friday', 'Saturday', 'Monday', 'Monday', 
+            'Sunday']
 ```
 
 -------------------------------------------------------------------
@@ -236,6 +245,7 @@ df['column name'].astype('category')
 
 Converting to categories is not always helpful.
 <br/>
+
 The following examples will show the power and pitfalls of categories
 
 
@@ -431,6 +441,9 @@ String: Random category--->  0.9068MB
 Categories only made the DF memory use worse
 
 
+
+
+.
 ```
 
 ----------
@@ -461,7 +474,7 @@ Top 10 rows of data
 3   Thursday  World      Fairfield   Thursday   World      Fairfield          vwjs
 4     Friday  Hello  Huber Heights     Friday   Hello  Huber Heights          xiiz
 5   Saturday  World      Riverdale   Saturday   World      Riverdale          owon
-6     Sunday  Hello    https://github.com/DiDacTexGit/Talk-ProcessingLargeDatawithPandas     Dayton     Sunday   Hello         Dayton          jihl
+6     Sunday  Hello         Dayton     Sunday   Hello         Dayton          jihl
 7     Monday  World    Beavercreek     Monday   World    Beavercreek          xwon
 8    Tuesday  Hello        Oakwood    Tuesday   Hello        Oakwood          zchj
 9  Wednesday  World      Fairfield  Wednesday   World      Fairfield          hnjt
