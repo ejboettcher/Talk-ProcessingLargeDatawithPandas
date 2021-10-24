@@ -667,6 +667,13 @@ __________________________________________________
 * Categories can be **Helpful** or **Hurtful** when we are dealing with large data.
    * Please use Pandas with care
 
+<br>
+
+### Prayer to PyLint
+
+my code failed again <br>
+CI in the cloud please take <br>
+pylint be my friend
 
 -------
 
