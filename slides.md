@@ -6,7 +6,6 @@
 
 #### DiDacTex, LLC
 
-
 <br/>
 
 
@@ -22,7 +21,6 @@ Luckily, we live in a time where most people have laptops with processing power
 that would have made the engineers who put a man on the moon swoon. 
 At the very least, doubt it would be possible to make.
 
-
 <br/>
 
 ### But, you say,
@@ -31,7 +29,6 @@ At the very least, doubt it would be possible to make.
 Well this talk is for you.
 
 -----------------------------------------------------------------------
-
 
 ## Brief History (small subset) of Large Data
 
@@ -45,6 +42,7 @@ For example, in the 1600 Johannes Kepler used Tycho Brahe large data set on plan
 
 Unfortunately, he had to wait until Tycho Brahe died before he could get a hold of a large data set.  
 <br/>
+
 
 
 #### Some even thought he played a hand in Brahe's death
@@ -117,7 +115,9 @@ Pandas is fast, powerful and flexible.
 It enables you to quickly parse data. 
 But, it is mainly designed to handle ~<100mb.  
 
+
 <br/>
+
 
 There are other tools like Spark to handle LARGE data sets 
 (100 gigabytes to terabytes), but...
@@ -608,6 +608,7 @@ Top 4 rows of data
 ```
 
 -------------
+
 ## Read in...
  `My_Awesome_cat.csv` (Files size: ~486MB)
 
@@ -627,6 +628,7 @@ python read_awesome.py -c 1 -r 0 -d Sunday
 ```
 
 ---------------------------------
+
 #### WOW
 The data in memory is **LESS** than the file size, by almost 90%!
 
